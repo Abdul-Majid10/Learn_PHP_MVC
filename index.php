@@ -4,12 +4,14 @@
 //     exit();
 // }
 
-// print "The request Path is: ". $_SERVER['PATH_INFO'];
+// print "The request  Path is: " . $_SERVER['PATH_INFO'];
 
 // $url = isset($_SERVER['PATH_INFO']) ? explode('/', $_SERVER['PATH_INFO']) : '/';
 $url = isset($_SERVER['PATH_INFO']) ? explode('/', ltrim($_SERVER['PATH_INFO'], '/')) : '/';
-require_once __DIR__. '/Models/conn_model.php';
-$conn = new Connection();
+require_once __DIR__ . '/Models/conn_model.php';
+
+// print_r($url);
+// $conn = new Connection();
 
 if ($url == '/') {
 
@@ -25,7 +27,7 @@ if ($url == '/') {
     $indexController = new IndexController($indexModel);
     $indexView = new IndexView($indexController, $indexModel);
 
-    // print $indexView->index();
+    $indexView->show_all_products();
 } else {
 
     // This is not home page
@@ -64,6 +66,7 @@ if ($url == '/') {
         if ($requestedAction != '') {
             // then we call the method via the view
             // dynamic call of the view
+            // print $viewObj->$requestedAction();
             print $viewObj->$requestedAction($requestedParams);
         }
     } else {

@@ -13,7 +13,8 @@ class AboutView
         print "About - ";
     }
 
-    public function aboutMessage(){
+    public function aboutMessage()
+    {
         return $this->model->getMessage();
     }
 

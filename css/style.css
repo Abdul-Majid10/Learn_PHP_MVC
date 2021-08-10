@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: beige;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
 
 h1 {
@@ -42,12 +44,7 @@ input {
   font-size: 20px;
 }
 
-body {
-  margin: 0px;
-  padding: 0px;
-  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-  background-color: beige;
-}
+/* not for not */
 
 header {
   position: relative;
@@ -58,6 +55,16 @@ header {
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+table {
+  border-collapse: collapse;
+  border: 5px ;
+  max-width: 1200px;
+  margin: 20px auto;
+  width: 100%;
+  border-color: #069370;
+  border-radius: 10px;
 }
 
 .logo {

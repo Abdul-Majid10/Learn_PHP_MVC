@@ -13,4 +13,9 @@ class IndexController
     {
         return $this->model->welcomeMessage();
     }
+
+    public function get_all_products_stmt()
+    {
+        return $this->model->get_all_products_stmt();
+    }
 }
