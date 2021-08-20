@@ -1,4 +1,3 @@
-<?php include 'php_files/header.php'; ?>
 <?php
 class IndexView
 {
@@ -10,6 +9,8 @@ class IndexView
     {
         $this->controller = $controller;
         $this->model = $model;
+        include 'php_files/header.php';
+        include 'php_files/refresh.php';
     }
 
     public function index()
@@ -21,6 +22,7 @@ class IndexView
     {
         return $this->controller->get_all_products_stmt();
     }
+
 
     public function show_all_products()
     {
@@ -50,4 +52,3 @@ class IndexView
         echo " </table>";
     }
 }
-?>

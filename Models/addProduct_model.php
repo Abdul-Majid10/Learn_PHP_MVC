@@ -1,10 +1,6 @@
 <?php
-
 class AddProductModel
 {
-
-    private $sql;
-
     function __construct()
     {
     }
@@ -22,6 +18,7 @@ class AddProductModel
             ':qty' => $qty, //$_POST['P_Quantity']
         ));
 
-        echo "Submitted";
+        // echo "Submitted";
+        return true;
     }
 }

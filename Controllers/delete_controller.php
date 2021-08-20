@@ -12,10 +12,11 @@ class DeleteController
     public function delPro()
     {
 
-        if ($_GET['P_ID'] != '') {
-            $this->model->statementExe($_GET['P_ID']);
+        if ($_POST['P_ID'] != '') {
+            return $this->model->statementExe($_POST['P_ID']);
         } else {
-            echo "Plese write Product Id.";
+            // echo "Plese write Product Id.";
+            return false;
         }
     }
 }

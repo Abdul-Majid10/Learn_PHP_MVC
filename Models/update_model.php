@@ -16,7 +16,7 @@ class UpdateModel
             $row = $res->fetch(PDO::FETCH_ASSOC);
             return $row;
         } else {
-            echo "There is no Product of Product ID : " . $id;
+            // echo "There is no Product of Product ID : " . $id;
             return false;
         }
     }
@@ -38,6 +38,7 @@ class UpdateModel
             ':qty' => $qty, //$_POST['P_Quantity']
         ));
 
-        echo "Product Updated";
+        // echo "Product Updated";
+        return true;
     }
 }
