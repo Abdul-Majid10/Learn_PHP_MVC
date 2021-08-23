@@ -19,9 +19,11 @@ class DeleteModel
         if ($res->fetchColumn() > 0) {
             $finalSql = "DELETE FROM Product WHERE Product_ID = $id";
             $res = $conn->getPdo()->query($finalSql);
-            echo "Product Deleted successfully.";
+            // echo "Product Deleted successfully.";
+            return true;
         } else {
-            echo "There is no Product of Product ID : " . $id;
+            // echo "There is no Product of Product ID : " . $id;
+            return false;
         }
     }
 }

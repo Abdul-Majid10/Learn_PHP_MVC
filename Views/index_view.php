@@ -1,4 +1,3 @@
-<?php include 'php_files/header.php'; ?>
 <?php
 class IndexView
 {
@@ -14,7 +13,9 @@ class IndexView
 
     public function index()
     {
-        return $this->controller->sayWelcome();
+        require 'php_files/header.php';
+        require 'php_files/search.php';
+        require 'php_files/refresh.php';
     }
 
     public function get_all_products_stmt()
@@ -22,9 +23,42 @@ class IndexView
         return $this->controller->get_all_products_stmt();
     }
 
+    public function get_products_stmt()
+    {
+        return $this->controller->get_products_stmt();
+    }
+
+    public function show_products()
+    {
+
+        $output = "";
+
+        $output .= "<table  border='2px' cellspacing='0px' cellpadding='5px'>
+            <tr>
+                <th>Product ID</th>
+                <th>Title</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>";
+        $stmt = $this->get_products_stmt();
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $output .= "<tr><td>" . $row['Product_ID'] . "</td><td>" . $row['Title'] . "</td><td>" . $row['Color'] . "</td><td>" .
+                $row['Price'] . "</td><td>" . $row['Quantity'] . "</td><tr>\n";
+        }
+        $output .= " </table>";
+
+        return $output;
+    }
+
+
     public function show_all_products()
     {
-        echo "<table  border='2px' cellspacing='0px' cellpadding='5px'>
+
+        $output = "";
+
+        $output .= "<table  border='2px' cellspacing='0px' cellpadding='5px'>
             <tr>
                 <th>Product ID</th>
                 <th>Title</th>
@@ -35,19 +69,11 @@ class IndexView
         $stmt = $this->get_all_products_stmt();
 
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr><td>";
-            echo (htmlentities($row['Product_ID']));
-            echo "</td><td>";
-            echo (htmlentities($row['Title']));
-            echo "</td><td>";
-            echo (htmlentities($row['Color']));
-            echo "</td><td>";
-            echo (htmlentities($row['Price']));
-            echo "</td><td>";
-            echo (htmlentities($row['Quantity']));
-            echo "</td><tr>\n";
+            $output .= "<tr><td>" . $row['Product_ID'] . "</td><td>" . $row['Title'] . "</td><td>" . $row['Color'] . "</td><td>" .
+                $row['Price'] . "</td><td>" . $row['Quantity'] . "</td><tr>\n";
         }
-        echo " </table>";
+        $output .= " </table>";
+
+        return $output;
     }
 }
-?>

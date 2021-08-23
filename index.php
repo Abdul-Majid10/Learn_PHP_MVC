@@ -27,7 +27,7 @@ if ($url == '/') {
     $indexController = new IndexController($indexModel);
     $indexView = new IndexView($indexController, $indexModel);
 
-    $indexView->show_all_products();
+    $indexView->index();
 } else {
 
     // This is not home page

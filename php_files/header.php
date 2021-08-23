@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms testing</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>PHP CRUD</title>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="/learn_PHP_MVC/css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/learn_PHP_MVC/css/style.css?version=51"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -20,25 +21,26 @@
             <ul>
                 <!-- <li><a href="/learn_PHP_MVC" class="active">Home</a></li> -->
                 <li><a href="/learn_PHP_MVC">Home</a></li>
-                <li><a href="/learn_PHP_MVC/addProduct">Add Products</a></li>
-                <li><a href="/learn_PHP_MVC/update">Update Products</a></li>
-                <li><a href="/learn_PHP_MVC/delete">Delete Products</a></li>
+                <li><a href="/learn_PHP_MVC/addProduct/index">Add Products</a></li>
+                <li><a href="/learn_PHP_MVC/update/index">Update Products</a></li>
+                <li><a href="/learn_PHP_MVC/delete/index">Delete Products</a></li>
             </ul>
         </nav>
         <div class="clearfix"></div>
     </header>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
-    </script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.menu-toggle').click(function() {
-                $('.menu-toggle').toggleClass('active');
-                $('nav').toggleClass('active');
-                // $('nav ul li a').removeClass('active')   
-            })
-        })
-    </script>
+    <script type="text/javascript" src="/learn_PHP_MVC/js_files/jquery-3.6.0.js"></script>
+    <script type="text/javascript" src="/learn_PHP_MVC/js_files/initial-load-table.js"></script>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.menu-toggle').click(function() {
+            $('.menu-toggle').toggleClass('active');
+            $('nav').toggleClass('active');
+            // $('nav ul li a').removeClass('active')   
+        })
+    })
+</script>
 
 </html>
