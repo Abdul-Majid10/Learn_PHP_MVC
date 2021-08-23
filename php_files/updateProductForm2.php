@@ -20,7 +20,7 @@
 
         <label for="P_Quantity">Quantity: </label>
         <input type="text" id="P_Quantity" name="P_Quantity" value="<?= $this->res['Quantity'] ?>">
-        <div id="submit-btn">
+        <div id="submit-btn" class="center">
             <input type="submit" id="btn-f2" value="Update">
         </div>
     </form>

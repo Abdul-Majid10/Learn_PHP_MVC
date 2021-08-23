@@ -17,7 +17,6 @@ class AddProductController
             return $this->model->statementExe($_POST['P_Title'], $_POST['P_Color'], $_POST['P_Price'], $_POST['P_Quantity']);
         } else {
             // echo "Enter data in all feilds";
-            // return "Enter data in all feilds";
             return false;
         }
     }

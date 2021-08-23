@@ -8,10 +8,14 @@
             <label for="P_ID">Product ID: </label>
             <input type="text" id="P_ID" name="P_ID">
 
-            <div id="submit-btn">
+            <div id="submit-btn" class="center">
                 <input type="submit" id="btn" value="Submit">
             </div>
         </form>
+    </div>
+
+    <div id="form_two">
+
     </div>
 </body>
 

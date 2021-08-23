@@ -17,7 +17,7 @@
 
             <label for="P_Quantity">Quantity: </label>
             <input type="text" id="P_Quantity" name="P_Quantity">
-            <div id="submit-btn">
+            <div id="submit-btn" class="center">
                 <input type="submit" id="btn" value="Submit">
             </div>
         </form>

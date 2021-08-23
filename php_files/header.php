@@ -30,7 +30,17 @@
     </header>
 
     <script type="text/javascript" src="/learn_PHP_MVC/js_files/jquery-3.6.0.js"></script>
-    <!-- <script type="text/javascript" src="/learn_PHP_MVC/js_files/insert-product-ajax.js"></script> -->
+    <script type="text/javascript" src="/learn_PHP_MVC/js_files/initial-load-table.js"></script>
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.menu-toggle').click(function() {
+            $('.menu-toggle').toggleClass('active');
+            $('nav').toggleClass('active');
+            // $('nav ul li a').removeClass('active')   
+        })
+    })
+</script>
 
 </html>

@@ -4,15 +4,14 @@ $(document).ready(function () {
         var P_ID = $("#P_ID").val();
         $.ajax({
             type: "POST",
+            dataType: "json",
             url: "/learn_PHP_MVC/update/showProData",
             data: { P_ID: P_ID },
-            // dataType: "dataType",
+
             success: function (response) {
-                // alert(response);
-                // console.log(response[status]);
-                // console.log(response[form_data]);
-                // console.log(response);
-                if (response) {
+
+                if (response.status) {
+                    $("#form_two").html(response.form_data);
                     $("#btn-f2").on('click', function (e) {
                         e.preventDefault();
 
@@ -34,15 +33,17 @@ $(document).ready(function () {
                                 } else {
                                     alert("Product is NOT Updated. There is some error. Please check all feild. And must fill all feilds");
                                 }
+                            },
+                            error: function (request, status, error) {
+                                alert(request.responseText);
                             }
                         });
                     });
 
                 } else {
-                    alert("Please check you feild it must be filled and if it is filled then The product of this id will not exist.");
+                    alert("Please check feild. It must be filled and if it is filled then The product of this id will not exist.");
                 }
             }
         });
-
     });
 });
